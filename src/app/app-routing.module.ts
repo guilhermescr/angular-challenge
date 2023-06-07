@@ -6,6 +6,7 @@ import { RegisterComponent } from './core/components/form/register/register.comp
 import { LoginComponent } from './core/components/form/login/login.component';
 
 import { AuthGuard } from './core/guards/auth.guard';
+import { PPostsComponent } from './features/posts/pages/p-posts/p-posts.component';
 
 const routes: Routes = [
   {
@@ -22,8 +23,9 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path: 'pagenotfound',
-    component: PageNotFoundComponent,
+    path: 'posts',
+    component: PPostsComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '',
@@ -32,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'pagenotfound',
+    component: PageNotFoundComponent,
   },
 ];
 
