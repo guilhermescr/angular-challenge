@@ -5,10 +5,13 @@ import { PageNotFoundComponent } from './core/components/pagenotfound/pagenotfou
 import { RegisterComponent } from './core/components/form/register/register.component';
 import { LoginComponent } from './core/components/form/login/login.component';
 
+import { AuthGuard } from './core/guards/auth.guard';
+
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'login',
@@ -24,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'register',
+    redirectTo: '/home',
     pathMatch: 'full',
   },
   {
