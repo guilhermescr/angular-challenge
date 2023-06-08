@@ -1,0 +1,14 @@
+<a routerLink="/posts">
+  <button type="button">Back To Posts</button>
+</a>
+
+<app-loader *ngIf="isLoading; else showPost"></app-loader>
+
+<ng-template #showPost>
+  <div class="post" *ngIf="post?.id">
+    <p>ID: {{ post.id }}</p>
+    <p>Author: {{ post.user.username }}</p>
+    <h2>Title: {{ post.title }}</h2>
+    <p>{{ post.body }}</p>
+  </div>
+</ng-template>

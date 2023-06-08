@@ -1,0 +1,32 @@
+:host {
+  background-color: #40424d;
+  border-radius: 12px;
+  left: 50%;
+  max-width: 450px;
+  padding: 35px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+
+  .closeIcon {
+    color: #ff4e4e;
+    cursor: pointer;
+    font-size: 23px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  h1 {
+    color: #fff;
+    text-align: center;
+  }
+}
+
+@media (max-width: 460px) {
+  :host {
+    max-width: 250px;
+  }
+}

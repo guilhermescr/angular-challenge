@@ -1,28 +1,47 @@
+<app-logout-button></app-logout-button>
+
 <h1>Posts</h1>
 
-<nz-select
-  class="posts-select"
-  nzPlaceHolder="Select the amount of posts to be displayed..."
-  [(ngModel)]="postsAmount"
-  (ngModelChange)="getPosts()"
->
-  <nz-option nzValue="1" nzLabel="1"></nz-option>
-  <nz-option nzValue="2" nzLabel="2"></nz-option>
-  <nz-option nzValue="3" nzLabel="3"></nz-option>
-  <nz-option nzValue="4" nzLabel="4"></nz-option>
-  <nz-option nzValue="5" nzLabel="5"></nz-option>
-  <nz-option nzValue="6" nzLabel="6"></nz-option>
-  <nz-option nzValue="7" nzLabel="7"></nz-option>
-  <nz-option nzValue="8" nzLabel="8"></nz-option>
-  <nz-option nzValue="9" nzLabel="9"></nz-option>
-  <nz-option nzValue="10" nzLabel="10"></nz-option>
-</nz-select>
+<app-create-post-form *ngIf="createPostFormState"></app-create-post-form>
 
-<section class="posts">
-  <div class="post" *ngFor="let post of posts">
-    <p>ID: {{ post.id }}</p>
-    <p>Author: {{ post.user.username }}</p>
-    <h2>Title: {{ post.title }}</h2>
-    <p>{{ post.body }}</p>
+<form [ngClass]="'postsGetAndAddForm'">
+  <app-posts-select (getPostsEvent)="getPosts($event)"></app-posts-select>
+
+  <button
+    nz-button
+    [nzType]="'primary'"
+    type="button"
+    (click)="openCreatePostForm()"
+  >
+    Create Post
+  </button>
+
+  <div class="searchBox">
+    <input
+      nz-input
+      type="search"
+      id="searchPost"
+      name="searchPost"
+      placeholder="Search for the title of a post..."
+      [(ngModel)]="searchTerm"
+    />
+
+    <button nz-button [nzType]="'primary'" type="button" id="searchPostButton">
+      Search Post
+    </button>
   </div>
-</section>
+</form>
+
+<p *ngIf="!isLoading && !posts.length">There's no posts now...</p>
+
+<app-loader *ngIf="isLoading; else showPosts"></app-loader>
+
+<ng-template #showPosts>
+  <section [ngClass]="'posts'">
+    <app-post
+      *ngFor="let post of posts | filterPosts : searchTerm"
+      [post]="post"
+      (deletePostEvent)="deletePost($event)"
+    ></app-post>
+  </section>
+</ng-template>

@@ -22,6 +22,12 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzInputModule,
     NzButtonModule,
   ],
-  exports: [FormsModule, ReactiveFormsModule],
+  exports: [
+    FormsModule,
+    ReactiveFormsModule,
+    NzFormModule,
+    NzInputModule,
+    NzButtonModule,
+  ],
 })
 export class FormModule {}

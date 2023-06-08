@@ -1,0 +1,23 @@
+:host {
+  position: relative;
+
+  .deleteIcon {
+    cursor: pointer;
+    font-size: 25px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: all 0.15s ease-in-out;
+    z-index: 1;
+
+    &:hover {
+      color: red;
+      font-size: 26px;
+    }
+  }
+
+  .post {
+    border-block: 1px solid #aaa;
+    cursor: pointer;
+  }
+}

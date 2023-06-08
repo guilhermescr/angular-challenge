@@ -7,6 +7,7 @@ import { LoginComponent } from './core/components/form/login/login.component';
 
 import { AuthGuard } from './core/guards/auth.guard';
 import { PPostsComponent } from './features/posts/pages/p-posts/p-posts.component';
+import { FullPostComponent } from './features/posts/pages/p-posts/components/full-post/full-post.component';
 
 const routes: Routes = [
   {
@@ -24,8 +25,17 @@ const routes: Routes = [
   },
   {
     path: 'posts',
-    component: PPostsComponent,
     canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: PPostsComponent,
+      },
+      {
+        path: 'post/:id',
+        component: FullPostComponent,
+      },
+    ],
   },
   {
     path: '',

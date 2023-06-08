@@ -17,30 +17,46 @@ const GET_POSTS = (limit: number) => {
   `;
 };
 
+const GET_POST = gql`
+  query ($id: ID!) {
+    post(id: $id) {
+      id
+      user {
+        username
+      }
+      title
+      body
+    }
+  }
+`;
+
 const POST_POST = gql`
-  mutation ($input: CreateUserInput!) {
-    createUser(input: $input) {
-      name
-      username
-      email
+  mutation ($input: CreatePostInput!) {
+    createPost(input: $input) {
+      id
+      title
+      body
     }
   }
 `;
 
 const PUT_POST = gql`
-  mutation ($input: UpdateUserInput!, $userId: ID!) {
-    updateUser(input: $input, userId: $userId) {
-      name
-      username
-      email
+  mutation ($id: ID!, $input: UpdatePostInput!) {
+    updatePost(id: $id, input: $input) {
+      id
+      user {
+        username
+      }
+      title
+      body
     }
   }
 `;
 
 const DELETE_POST = gql`
   mutation ($id: ID!) {
-    deleteUser(id: $id)
+    deletePost(id: $id)
   }
 `;
 
-export { GET_POSTS, POST_POST, PUT_POST, DELETE_POST };
+export { GET_POSTS, GET_POST, POST_POST, PUT_POST, DELETE_POST };

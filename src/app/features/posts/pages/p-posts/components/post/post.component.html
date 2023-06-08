@@ -1,0 +1,14 @@
+<span
+  nz-icon
+  nzType="delete"
+  nzTheme="outline"
+  [ngClass]="'deleteIcon'"
+  (click)="fireDeletePostEvent()"
+></span>
+
+<div class="post" (click)="linkToPostRoute(post.id)">
+  <p>ID: {{ post.id }}</p>
+  <p>Author: {{ post.user.username }}</p>
+  <h2>{{ post.title | titlecase }}</h2>
+  <p>{{ post.body }}</p>
+</div>

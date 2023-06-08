@@ -1,11 +1,41 @@
-.posts-select {
-  min-width: 90px;
+:host {
+  display: inline-block;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.postsGetAndAddForm {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  max-width: 423px;
+
+  .searchBox {
+    margin-top: 15px;
+    width: 100%;
+
+    #searchPostButton {
+      width: 100%;
+    }
+  }
 }
 
 .posts {
   padding-top: 10px;
+}
 
-  .post {
-    border-block: 1px solid #aaa;
+@media (max-width: 460px) {
+  .postsGetAndAddForm {
+    .searchBox {
+      margin: 15px auto;
+      width: 94%;
+    }
   }
 }

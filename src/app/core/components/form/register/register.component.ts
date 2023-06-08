@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { RegisterService } from 'src/app/core/services/register.service';
+import { UsersService } from 'src/app/shared/services/users.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,10 @@ export class RegisterComponent {
   validateForm!: UntypedFormGroup;
 
   submitForm(): void {
-    if (this.validateForm.valid) {
+    if (
+      this.validateForm.valid &&
+      this.usersService.isNewUser(this.validateForm.value)
+    ) {
       this.registerService.signUp(this.validateForm.value);
     } else {
       Object.values(this.validateForm.controls).forEach((control) => {
@@ -49,7 +53,8 @@ export class RegisterComponent {
 
   constructor(
     private fb: UntypedFormBuilder,
-    private registerService: RegisterService
+    private registerService: RegisterService,
+    private usersService: UsersService
   ) {}
 
   ngOnInit(): void {

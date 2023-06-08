@@ -1,0 +1,18 @@
+@keyframes loading {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.loader {
+  animation: loading 1.5s linear infinite;
+  border: 3px solid #ababab;
+  border-top-color: #547dec;
+  border-radius: 50%;
+  height: 120px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 120px;
+}
