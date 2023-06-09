@@ -29,11 +29,12 @@ ng add apollo-angular
 <li>RXJS: BehaviorSubject e Observable</li>
 </ul>
 
-### Styles
+### Other tools
 
 <ul>
 <li>Ant Design</li>
 <li>SCSS</li>
+<li>GraphQL</li>
 </ul>
 
 ## Creator
