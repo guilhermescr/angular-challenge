@@ -1,11 +1,27 @@
-[nz-form] {
-  max-width: 600px;
-}
+@use "../../../../../assets/utilities/mixins";
 
-.register-area {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  max-width: 500px;
-  width: 100%;
+:host {
+  @include mixins.auth-form(500px);
+
+  [nz-form] {
+    width: 100%;
+
+    .register-area {
+      @include mixins.flex-center;
+      justify-content: space-between;
+      margin: 0;
+      width: 100%;
+
+      & > * {
+        flex: 0 0 0;
+      }
+
+      .login-invite {
+        @include mixins.flex-center;
+        gap: 5px;
+        justify-content: end;
+        min-width: 94px;
+      }
+    }
+  }
 }

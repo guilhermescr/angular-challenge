@@ -1,11 +1,18 @@
-.login-form {
-  max-width: 300px;
-}
+@use "../../../../../assets/utilities/mixins";
 
-.login-form-margin {
-  margin-bottom: 16px;
-}
+:host {
+  @include mixins.auth-form;
 
-.login-form-button {
-  width: 100%;
+  .login-form {
+    height: 100%;
+    width: 100%;
+
+    .login-form-margin {
+      margin-bottom: 16px;
+    }
+
+    .login-form-button {
+      width: 100%;
+    }
+  }
 }

@@ -1,0 +1,20 @@
+@mixin flex-center($direction: row) {
+  align-items: center;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+}
+
+@mixin auth-form($maxWidth: 300px) {
+  background-color: #fafefa;
+  border-radius: 10px;
+  @include flex-center(column);
+  margin: auto;
+  max-width: $maxWidth;
+  padding: 30px;
+  width: 100%;
+
+  h1 {
+    text-align: center;
+  }
+}

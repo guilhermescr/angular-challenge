@@ -9,7 +9,17 @@ body {
   height: 100%;
 }
 
+body {
+  background-color: #2b2a2a;
+}
+
 ol,
 ul {
   list-style: none;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
