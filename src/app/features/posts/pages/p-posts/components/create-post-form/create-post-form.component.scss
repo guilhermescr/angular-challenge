@@ -8,7 +8,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 
   .closeIcon {
     color: #ff4e4e;
@@ -22,6 +22,33 @@
   h1 {
     color: #fff;
     text-align: center;
+  }
+
+  .createPostForm {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .createPostForm__formItem {
+      align-items: flex-start;
+      background-color: #40a9ff;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      flex-direction: column;
+
+      *:not([nzfor], label) {
+        width: 100%;
+      }
+
+      [nzfor],
+      label {
+        padding-left: 10px;
+      }
+
+      [nzfor="body"] {
+        margin-bottom: 23px;
+      }
+    }
   }
 }
 

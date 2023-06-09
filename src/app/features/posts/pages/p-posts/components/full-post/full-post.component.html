@@ -1,6 +1,6 @@
-<a routerLink="/posts">
-  <button type="button">Back To Posts</button>
-</a>
+<button type="button" [ngClass]="'backToPostsButton'">
+  <a routerLink="/posts" > Back To Posts </a>
+</button>
 
 <app-loader *ngIf="isLoading; else showPost"></app-loader>
 

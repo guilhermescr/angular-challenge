@@ -44,6 +44,7 @@ export class CreatePostFormComponent {
           };
 
           this.postsService.setPosts([...this.posts, newPost]);
+          this.closeCreatePostForm();
         });
     }
   }

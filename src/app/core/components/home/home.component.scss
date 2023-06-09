@@ -1,0 +1,8 @@
+@use "../../../../assets/utilities/mixins";
+
+:host {
+  background-color: #fefafa;
+  display: block;
+  @include mixins.flex-center(column);
+  height: 100%;
+}

@@ -1,2 +1,30 @@
-.post {
+:host {
+  padding: 20px;
+
+  .backToPostsButton {
+    background-color: #fefefe;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fafafa;
+    }
+
+    a {
+      background-color: transparent;
+      display: inline-block;
+      padding: 8px;
+    }
+  }
+
+  .post {
+    background-color: #fefefe;
+    margin-top: 20px;
+    padding: 25px;
+
+    p:nth-child(1) {
+      font-weight: bold;
+    }
+  }
 }

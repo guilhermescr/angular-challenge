@@ -1,44 +1,46 @@
-<h1>Login</h1>
+<div class="wrapper">
+  <h1>Login</h1>
 
-<form
-  nz-form
-  [formGroup]="validateForm"
-  class="login-form"
-  (ngSubmit)="submitForm()"
->
-  <nz-form-item>
-    <nz-form-control nzErrorTip="Please input your email!">
-      <nz-input-group nzPrefixIcon="user">
-        <input
-          type="email"
-          nz-input
-          formControlName="email"
-          placeholder="Email"
-        />
-      </nz-input-group>
-    </nz-form-control>
-  </nz-form-item>
-
-  <nz-form-item>
-    <nz-form-control nzErrorTip="Please input your password!">
-      <nz-input-group nzPrefixIcon="lock">
-        <input
-          type="password"
-          nz-input
-          formControlName="password"
-          placeholder="Password"
-        />
-      </nz-input-group>
-    </nz-form-control>
-  </nz-form-item>
-
-  <button
-    nz-button
-    class="login-form-button login-form-margin"
-    [nzType]="'primary'"
+  <form
+    nz-form
+    [formGroup]="validateForm"
+    class="login-form"
+    (ngSubmit)="submitForm()"
   >
-    Log in
-  </button>
-  Or
-  <a routerLink="/register">Register now!</a>
-</form>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your email!">
+        <nz-input-group nzPrefixIcon="user">
+          <input
+            type="email"
+            nz-input
+            formControlName="email"
+            placeholder="Email"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input
+            type="password"
+            nz-input
+            formControlName="password"
+            placeholder="Password"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <button
+      nz-button
+      class="login-form-button login-form-margin"
+      [nzType]="'primary'"
+    >
+      Log in
+    </button>
+    Or
+    <a routerLink="/register">Register now!</a>
+  </form>
+</div>

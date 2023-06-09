@@ -1,18 +1,26 @@
+@use "../../../../assets/utilities/mixins";
+
 @keyframes loading {
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
-.loader {
-  animation: loading 1.5s linear infinite;
-  border: 3px solid #ababab;
-  border-top-color: #547dec;
-  border-radius: 50%;
-  height: 120px;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  width: 120px;
+:host {
+  background-color: #000000bb;
+  @include mixins.flex-center;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  .loader {
+    animation: loading 1.5s linear infinite;
+    border: 3px solid #ababab;
+    border-top-color: #547dec;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+  }
 }

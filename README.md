@@ -1,27 +1,47 @@
-# AngularChallenge
+# NGPostgram 📷
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.8.
+<p>A sort of CRUD which allows you to create posts.</p>
 
-## Development server
+<img style="border: 1px solid #000; border-radius: 8px;" src="src/assets/img/ngpostgram-home.png" alt="NGPostgram Home" />
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## How I installed everything
 
-## Code scaffolding
+```
+ng new nomedapasta
+cd nomedapasta/
+npm install graphql graphql-tag
+ng add ng-zorro-antd
+ng add apollo-angular
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features & Tools
 
-## Build
+#### Angular
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<ul>
+<li>Auth Guard</li>
+<li>Rotas e Rotas Dinâmicas</li>
+<li>Diretivas: NgIf, NgFor, NgModel, NgClass</li>
+<li>Input e Output</li>
+<li>Pipe existente: uppercase</li>
+<li>Pipe personalizada: filter posts</li>
+<li>Formulários e Validações com FormGroup</li>
+<li>RXJS: BehaviorSubject e Observable</li>
+</ul>
 
-## Running unit tests
+### Styles
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<ul>
+<li>Ant Design</li>
+<li>SCSS</li>
+</ul>
 
-## Running end-to-end tests
+## Creator
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+_Developed by Guilherme Rocha, 05/06 to 09/06 in 2023._
 
-## Further help
+- [Instagram](https://www.instagram.com/devguiga/)
+- [Linkedin](https://www.linkedin.com/in/guilhermescr/)
+- [YouTube](https://www.youtube.com/@devguiga/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[⬆ Voltar ao topo](#ngpostgram-📷)<br>

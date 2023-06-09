@@ -1,18 +1,24 @@
 @use "../../../../../assets/utilities/mixins";
 
 :host {
-  @include mixins.auth-form;
+  background-color: #2b2a2a;
+  @include mixins.flex-center;
+  min-height: 100vh;
 
-  .login-form {
-    height: 100%;
-    width: 100%;
+  .wrapper {
+    @include mixins.auth-form;
 
-    .login-form-margin {
-      margin-bottom: 16px;
-    }
-
-    .login-form-button {
+    .login-form {
+      height: 100%;
       width: 100%;
+
+      .login-form-margin {
+        margin-bottom: 16px;
+      }
+
+      .login-form-button {
+        width: 100%;
+      }
     }
   }
 }

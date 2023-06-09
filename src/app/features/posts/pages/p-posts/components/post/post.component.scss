@@ -1,9 +1,24 @@
+@use "../../../../../../../assets/utilities/mixins";
+
 :host {
+  background-color: #40a9ff;
+  border-radius: 7px;
   position: relative;
+
+  &:hover {
+    filter: saturate(0.9);
+    transform: scale(1.02);
+  }
+
+  &:active {
+    opacity: 0.9;
+  }
 
   .deleteIcon {
     cursor: pointer;
+    @include mixins.flex-center;
     font-size: 25px;
+    gap: 5px;
     position: absolute;
     right: 15px;
     top: 15px;
@@ -17,7 +32,16 @@
   }
 
   .post {
-    border-block: 1px solid #aaa;
     cursor: pointer;
+    height: 100%;
+    padding: 20px;
+
+    * {
+      margin: 0;
+    }
+
+    p:nth-child(1) {
+      font-weight: bold;
+    }
   }
 }

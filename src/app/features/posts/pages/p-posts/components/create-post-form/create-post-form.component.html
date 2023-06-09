@@ -3,7 +3,7 @@
 <h1>Create Post</h1>
 
 <form nz-form [ngClass]="'createPostForm'" [formGroup]="createPostForm" (ngSubmit)="submitForm()">
-  <nz-form-item>
+  <nz-form-item [ngClass]="'createPostForm__formItem'">
     <nz-form-label nzFor="title" [ngClass]="'createPostForm__label'"
       >Title:</nz-form-label
     >
@@ -19,7 +19,7 @@
     </nz-form-control>
   </nz-form-item>
 
-  <nz-form-item>
+  <nz-form-item [ngClass]="'createPostForm__formItem'">
     <nz-form-label nzFor="body" [ngClass]="'createPostForm__label'"
       >Content:</nz-form-label
     >

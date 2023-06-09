@@ -12,6 +12,7 @@
     [nzType]="'primary'"
     type="button"
     (click)="openCreatePostForm()"
+    [ngClass]="'createPostButton'"
   >
     Create Post
   </button>
@@ -32,7 +33,9 @@
   </div>
 </form>
 
-<p *ngIf="!isLoading && !posts.length">There's no posts now...</p>
+<p *ngIf="!isLoading && !posts.length" [ngClass]="'noPostsMsg'">
+  There's no posts now...
+</p>
 
 <app-loader *ngIf="isLoading; else showPosts"></app-loader>
 

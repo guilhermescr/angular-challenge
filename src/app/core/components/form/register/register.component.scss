@@ -1,26 +1,32 @@
 @use "../../../../../assets/utilities/mixins";
 
 :host {
-  @include mixins.auth-form(500px);
+  background-color: #2b2a2a;
+  @include mixins.flex-center;
+  min-height: 100vh;
 
-  [nz-form] {
-    width: 100%;
+  .wrapper {
+    @include mixins.auth-form(500px);
 
-    .register-area {
-      @include mixins.flex-center;
-      justify-content: space-between;
-      margin: 0;
+    [nz-form] {
       width: 100%;
 
-      & > * {
-        flex: 0 0 0;
-      }
-
-      .login-invite {
+      .register-area {
         @include mixins.flex-center;
-        gap: 5px;
-        justify-content: end;
-        min-width: 94px;
+        justify-content: space-between;
+        margin: 0;
+        width: 100%;
+
+        & > * {
+          flex: 0 0 0;
+        }
+
+        .login-invite {
+          @include mixins.flex-center;
+          gap: 5px;
+          justify-content: end;
+          min-width: 94px;
+        }
       }
     }
   }

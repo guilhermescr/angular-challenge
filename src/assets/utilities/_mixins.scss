@@ -6,7 +6,7 @@
 }
 
 @mixin auth-form($maxWidth: 300px) {
-  background-color: #fafefa;
+  background-color: #fafafe;
   border-radius: 10px;
   @include flex-center(column);
   margin: auto;

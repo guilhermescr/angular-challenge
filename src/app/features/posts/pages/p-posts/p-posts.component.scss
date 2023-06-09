@@ -1,41 +1,72 @@
+@use "../../../../../assets/utilities/mixins";
+
 :host {
-  display: inline-block;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  padding: 20px;
   position: relative;
   width: 100%;
-}
 
-h1 {
-  text-align: center;
-}
+  h1 {
+    text-align: center;
+  }
 
-.postsGetAndAddForm {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: auto;
-  max-width: 423px;
-
-  .searchBox {
-    margin-top: 15px;
+  .postsGetAndAddForm {
+    @include mixins.flex-center;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 423px;
     width: 100%;
 
-    #searchPostButton {
+    .searchBox {
+      margin-top: 15px;
       width: 100%;
+
+      #searchPostButton {
+        width: 100%;
+      }
+    }
+  }
+
+  .noPostsMsg {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    margin-inline: auto;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 460px) {
+  :host {
+    .postsGetAndAddForm {
+      max-width: 303px;
+
+      .searchBox {
+        margin: 15px auto;
+      }
+    }
+
+    .posts {
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     }
   }
 }
 
-.posts {
-  padding-top: 10px;
-}
-
-@media (max-width: 460px) {
-  .postsGetAndAddForm {
-    .searchBox {
-      margin: 15px auto;
-      width: 94%;
+@media (max-width: 342px) {
+  :host {
+    .postsGetAndAddForm {
+      > * {
+        max-width: 200px;
+        width: 100%;
+      }
     }
   }
 }
